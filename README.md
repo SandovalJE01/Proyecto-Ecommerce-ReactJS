@@ -1,1 +1,1 @@
-# Mi-Tienda
+# proyecto ecommerce
