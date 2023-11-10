@@ -8,11 +8,14 @@ export const NavBar = () => {
     return (
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar.Brand href="#home">CositasRicas</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="">Tortas Clasicas</Nav.Link>
+            <Nav.Link href="">Tortas Personalizadas</Nav.Link>
+            <Nav.Link href="">Tartas Frutales</Nav.Link>
+            <Nav.Link href="">Tartas Personalizadas</Nav.Link>
+            <Nav.Link href="">Box Dulce</Nav.Link>
+            <Nav.Link href="">Pedidos Especiales</Nav.Link>
           </Nav>
           <CartWidget />
         </Container>
