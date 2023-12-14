@@ -1,4 +1,4 @@
-import Container from "react-boostrap/Container";
+import Container from "react-bootstrap/Container";
 
 export const ItemListContainer = () => {
     return (
