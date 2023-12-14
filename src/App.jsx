@@ -8,6 +8,7 @@ import "./App.css"
 function App() {
     return(
         <BrowserRouter>
+        <NavBar />
         <Routes>
             <Route path="/" element={<ItemListContainer/> }/>
             <Route path="/category/:id" element={<ItemListContainer />}/>
