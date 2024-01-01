@@ -1,0 +1,160 @@
+html {
+    padding-bottom: 80px;
+}
+
+#container-detail {
+    width: max-content;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #212529;
+    color: white;
+    margin-bottom: 60px;
+}
+    
+#image-container {
+    width: 320px;
+    height: 500px;
+    padding: 20px;
+    margin: 16px;
+    display: flex;
+    align-items: start;
+}
+
+#image-container .image {
+    width: 90%;
+    height: 80%;
+    border-radius: 8px;
+}
+
+#container-detail .description-price {
+    width: 50%;
+    border: white;
+}
+
+.description-price {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.container-description {
+    width: 90%;
+    height: max-content;
+    text-align: left;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+.container-description .title {
+    margin-top: 28px;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.container-description .description {
+    font-size: 20px;
+    font-family: sans-serif;
+    margin-top: 20px;
+}
+    
+.container-description .stock {
+    width: max-content;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.container-price {
+    margin-top: 24px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.container-price p {
+    font-size: large;
+    font-weight: bold;
+    width: max-content;
+    padding-top: 8px;
+}
+
+.container-price #terminar-compra {
+    width: 160px;
+    height: 40px;
+    border: 1px solid white;
+    font-size: 90%;
+}
+
+@media (max-width: 1200px) {
+
+  #container-detail {
+        height: max-content;
+    }
+
+    #image-container {
+        width: 320px;
+        height: 440px;
+    }
+
+    #image-container .image {
+        width: 90%;
+        height: 80%;
+        margin: 20px;
+    }
+
+    #container-detail .description-price {
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 991px) {
+    #container-detail{
+        width: 90%;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
+
+    #container-detail .description-price {
+        width: 100%;
+        height: 100%;
+    }
+  
+    .description-price .container-description {
+        height: max-content;
+    }
+
+    .item-buyer {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+}
+
+@media(max-width: 767px) {
+
+    .description-price .container-price {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #image-container {
+        width: 380px;
+        height: 500px;
+    margin: 0 auto;
+    }
+
+}
+
+@media (max-width: 575px) {
+
+  .container-description {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}

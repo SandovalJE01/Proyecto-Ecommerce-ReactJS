@@ -2,3 +2,14 @@
   color: red;
   padding-left: .5rem;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(77, 77, 65);
+  min-height: 100vh;
+}

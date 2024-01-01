@@ -1,0 +1,41 @@
+#container-count {
+    width: max-content;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.container-controls {
+    width: 120px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-controls .counter {
+    width: 20px;
+    text-align: center;
+}
+
+.container-controls .decrement {
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 8px 0 0 8px;
+}
+
+.container-controls .increment {
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 0 8px 8px 0;
+}
+
+#add-to-cart {
+    width: 160px;
+    height: 40px;
+    border: 1px solid white;
+    font-size: 90%;
+}
