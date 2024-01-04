@@ -5,7 +5,7 @@ export const productos = [
         descripcion: "",
         precio: 0,
         categoria: "Tortas Clasicas",
-        imagenURL: "",
+        imagenURL: "TortasClasicas.jpeg",
     },
     {
         id: 2,

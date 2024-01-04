@@ -23,7 +23,7 @@ useEffect(() => {
 },[id]);
 
 if (item) {
-    return <>Loading</>
+    return <> Loading </>
 }
 
     return <div>
