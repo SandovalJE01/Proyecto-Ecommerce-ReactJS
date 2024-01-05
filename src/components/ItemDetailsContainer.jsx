@@ -1,34 +1,38 @@
 import { useState, useEffect } from "react";
+import { Container } from 'react-bootstrap';
 import { useParams } from "react-router-dom";
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 
-import { productos } from "../data/productos";
+
+import { Loading } from './Loading';
+import { ItemDetail } from './ItemDetail';
+
+
 
 export const ItemDetailsContainer = () => {
-const [item, setitem] = useState(null);
 
-const {id} = useParams ();
+  const [productId, setProductId] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const { id } = useParams();
 
-useEffect(() => {
-    const promise = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(productos);
-        }, 2000); 
-    });
+  useEffect(() => {
 
-    promise
-    .then((response) => {
-            const filtros = response.find((item) => item.id === id);
-            setItem(filtros);
-    })
-},[id]);
+    const db = getFirestore();
 
-if (item) {
-    return <> Loading </>
-}
+    const refDoc = doc(db, "items", `${id}`);
 
-    return <div>
-        <h1>{item.titulo}</h1>
-    <img src={item.imgURL}/>
-    <p>{item.descripcion}</p>
-    </div>
+    getDoc(refDoc)
+      .then((snapshot) =>{
+      setProductId({id: snapshot.id,...snapshot.data()});
+      })
+      .finally(() => setLoading(false))
+
+  }, [id]);
+
+  
+  return (
+    <Container className="d-flex flex-wrap mt-3">
+      {loading ? <Loading /> : <ItemDetail product={ productId } />}
+    </Container>
+  )
 }

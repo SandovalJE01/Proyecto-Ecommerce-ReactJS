@@ -1,21 +1,21 @@
-// import { useContext } from "react";
+import { useContext } from "react";
 
-// import { CartContext } from "../contexts/CartContext";
-// import { BackToBuy } from "./BackToBuy";
-// import { ItemsCart } from "./ItemsCart";
+import { CartContext } from "../contexts/CartContext";
+import { BackToBuy } from "./BackToBuy";
+import { ItemsCart } from "./ItemsCart";
 // import { CheckOut } from "./CheckOut";
 
 
-// export const Cart = () => {
-//   const { items } = useContext(CartContext);
+export const Cart = () => {
+  const { items } = useContext(CartContext);
 
-//   if (!items.length) return <BackToBuy />
+  if (!items.length) return <BackToBuy />
   
-//   return(
+  return(
     
-//     <>
-//       <ItemsCart />
-//       <CheckOut />
-//     </>
-//   )
-// }
+    <>
+      <ItemsCart />
+      <CheckOut />
+    </>
+  );
+};

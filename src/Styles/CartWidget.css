@@ -1,4 +1,4 @@
-/* .container {
+.container {
     width: 100%;
     height: 50px;
 }
@@ -7,4 +7,9 @@
     width: 30px;
     height: 40px;
     font-size: 32px;
-} */
+}
+
+.carrito {
+    height: 30px;
+    padding-right: 5px;
+}

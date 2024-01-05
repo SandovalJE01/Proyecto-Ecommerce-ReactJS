@@ -1,4 +1,4 @@
-/* #container-count {
+#container-count {
     width: max-content;
     height: 40px;
     display: flex;
@@ -38,4 +38,4 @@
     height: 40px;
     border: 1px solid white;
     font-size: 90%;
-} */
+}

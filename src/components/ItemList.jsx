@@ -1,14 +1,21 @@
-import Container from "react-bootstrap/Container";
+import { MyItem } from "./Item";
+import { Loading } from "./Loading";
+import '../Styles/ItemList.css';
 
-import { Item } from "./Item";
 
-export const ItemList = ({ items }) => {
-
-    return (
-    <Container className="d-flex">
-            {items.map((item) => (
-            <Item key={item.id} item={item}/>
-    ))}
-    </Container>
-    );
-};
+export const ItemList = ({ products, loading }) => {
+    
+  return (
+    <div className="products-container">
+      { loading ? (
+        <Loading />
+      ) : (
+        products.map(product => (
+        <MyItem 
+          key={product.id}
+          product={product}
+        />)
+      ))}
+    </div>
+  )
+}

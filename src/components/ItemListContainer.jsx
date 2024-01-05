@@ -1,41 +1,44 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import Container from "react-bootstrap/Container";
+import { useState, useEffect } from 'react';
+import { ItemList } from './ItemList';
+import { useParams } from 'react-router-dom';
+import { getFirestore, getDocs, collection, query, where } from 'firebase/firestore';
 
-import { ItemList } from "./ItemList";
-import { productos } from "../data/productos";
+
 
 export const ItemListContainer = () => {
-    const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState(true);
 
-    const {id} = useParams ();
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { categoryId } = useParams();
+  
 
-    useEffect(() => {
-        const promise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(productos);
-            }, 2000); 
-        });
+  useEffect(() => {
 
-        promise
-        .then((response) => {
-            if (id) {
-                const filtros = response.filter((item) => item.category === id);
-                setItems(filtros);
-            } else {
-                setItems(response);
-            }
+    const db = getFirestore();
 
-        })
-        .finally(() => setLoading(false));
-
-    },[id]);
-
-    return (
-    <Container className="mt-4">
-        <h1>Lista</h1>
-        <ItemList items={items} />
-    </Container>
+    const consult = query(
+      collection(db, "items"),
+      where("categoryId", "==", `${categoryId}`)
     );
+
+    const refCollection = categoryId ? consult : collection(db, "items");
+
+
+    getDocs(refCollection).then((snapshot) => {
+      if(snapshot.size == 0) {
+        console.log("no results");
+      } else {
+        setProducts(
+          snapshot.docs.map((doc) => {
+            return { id: doc.id, ...doc.data()};
+          })
+        );
+      }
+    })
+      .finally(() => setLoading(false));
+
+  }, [categoryId]);
+
+  return  <ItemList products={products} loading={loading} /> 
+  
 };
