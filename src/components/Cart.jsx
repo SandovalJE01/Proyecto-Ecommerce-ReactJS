@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 import { BackToBuy } from "./BackToBuy";
 import { ItemsCart } from "./ItemsCart";
-// import { CheckOut } from "./CheckOut";
 
 
 export const Cart = () => {
@@ -17,5 +16,5 @@ export const Cart = () => {
       <ItemsCart />
       <CheckOut />
     </>
-  );
-};
+  )
+}

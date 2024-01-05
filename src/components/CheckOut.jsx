@@ -3,8 +3,8 @@ import { useContext, useState } from "react";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import moment from "moment";
 
-import { CartContext } from "../contexts/CartContext";
-import "../Styles/checkout";
+import { CartContext } from "../contexts/CartContext.jsx";
+import "../Styles/Checkout.css";
 
 const clearBuyer = {name: "", phone: "", email: ""};
 
@@ -31,7 +31,7 @@ export const CheckOut = () => {
     
     const orderCollection = collection(db, "orders");
     
-    addDoc(orderCollection, order).then(({id}) => {
+    addDoc(orderCollection, order).then(({ id }) => {
       if (id) {
         alert(`Su orden: ${id} ha sido completada!`);
       }
