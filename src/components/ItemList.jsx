@@ -15,7 +15,7 @@ export const ItemList = ({ products, loading }) => {
           key={product.id}
           product={product}
         />)
-      ))}
+      ))};
     </div>
-  )
-}
+  );
+};

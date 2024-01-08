@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap";
 import { useContext } from "react";
 
 import { CartContext } from "../contexts/CartContext";
-import'../Styles/ItemsCart.css';
+import "../Styles/ItemsCart.css";
 
 export const ItemsCart = () => {
 
@@ -19,7 +19,7 @@ export const ItemsCart = () => {
         <div key={item.id} className="item-buyer">
           
           <div className="image-container">
-            <img src={item.pictureUrl} alt={item.title} className="image"/>
+            <img src={item.imageId} alt={item.title} className="image"/>
           </div>
 
           <div className="data-container">

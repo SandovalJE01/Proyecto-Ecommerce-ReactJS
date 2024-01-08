@@ -1,18 +1,12 @@
 import { Button } from "react-bootstrap";
 import { useContext, useState } from "react";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-import moment from "moment";
+
 
 import { CartContext } from "../contexts/CartContext.jsx";
 import "../Styles/Checkout.css";
 
 const clearBuyer = {name: "", phone: "", email: ""};
-
-const fechaYHora = moment();
-const fechaCompra = fechaYHora.format("DD-MM-YYYY");
-const horaCompra = fechaYHora.format("HH:mm:ss");
-
-const date = { fecha: fechaCompra, hora: horaCompra };
 
 export const CheckOut = () => {
   const [buyer, setBuyer] = useState(clearBuyer);
@@ -25,13 +19,13 @@ export const CheckOut = () => {
   const handleSendOrder = (e) => {
     e.preventDefault();
 
-    const order = { buyer, items, date, total };
+    const order = { buyer, items, total };
 
     const db = getFirestore();
     
-    const orderCollection = collection(db, "orders");
+    const orderCollection = collection(db, "orders")
     
-    addDoc(orderCollection, order).then(({ id }) => {
+    addDoc(orderCollection, order).then(({id}) => {
       if (id) {
         alert(`Su orden: ${id} ha sido completada!`);
       }

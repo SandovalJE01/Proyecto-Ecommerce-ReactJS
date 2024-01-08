@@ -9,7 +9,7 @@ export const MyItem = ({product}) => {
     <Card id="card">
       <Card.Img 
         variant="top"
-        src={product.imageUrl}
+        src={product.imageId}
         className="image"
       />
       <Card.Body>

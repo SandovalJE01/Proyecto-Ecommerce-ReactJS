@@ -24,18 +24,18 @@ export const CartProvider = ({children}) => {
 
     } else {
       setItems((prev) => {return prev.concat({...item, quantity})}); 
-    }
-  }
+    };
+  };
 
   const isInCart = (item) => {
     return items.some((items) => items.id === item.id);
-  }
+  };
 
   const removeItem = (id) => {
     const newItems = items.filter((prev) => prev.id !== id);
     setItems(newItems);
-  }
+  };
 
   return <CartContext.Provider value={{items, clear, addItem, removeItem}}>{children}</CartContext.Provider>
 
-}
+};

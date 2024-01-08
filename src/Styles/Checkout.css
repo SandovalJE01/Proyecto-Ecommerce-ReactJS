@@ -1,5 +1,5 @@
 .form-container {
-    background-color: #212529;
+    background-color: #EF8BA1;
     width: max-content;
     height: max-content;
     margin: 0 auto;
@@ -10,7 +10,7 @@
 
 .form-container h2 {
     width: max-content;
-    color: #fff;
+    color: black;
     margin: 0 auto;
     padding: 0 32px;
 }
@@ -26,7 +26,7 @@
 }
 
 .field-name {
-    color: #fff;
+    color: black;
     margin-right: 12px;
     font-size: 24px;
 }
