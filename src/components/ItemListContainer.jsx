@@ -39,6 +39,6 @@ export const ItemListContainer = () => {
 
   }, [categoryId]);
 
-  return  <ItemList products={products} loading={loading} /> 
+  return  <ItemList products={products} loading={loading} />
   
 };

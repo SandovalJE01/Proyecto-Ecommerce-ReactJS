@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import { initializeApp } from "firebase/app";
+//import { getAnalytics } from "firebase/analytics";
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,7 +14,8 @@ const firebaseConfig = {
   projectId: "app-ecommerce-reactjs",
   storageBucket: "app-ecommerce-reactjs.appspot.com",
   messagingSenderId: "767123776398",
-  appId: "1:767123776398:web:5ea86319ccadd2f7e5fadf"
+  appId: "1:767123776398:web:5ea86319ccadd2f7e5fadf",
+   measurementId: "G-DRG0JH849F"
 };
 
 initializeApp(firebaseConfig);
@@ -23,3 +25,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>
 );
+
+//analytics = getAnalytics(app);
